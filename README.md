@@ -1,5 +1,7 @@
-[model_serving]:_md_img/serve.png
 [mlops_architecture]:_md_img/mlops_architecture.png
+[model_serving]:_md_img/serve.png
+[drift_dag]:_md_img/drift_dag.png
+[drift_dashboard]:_md_img/drift_dashboard.png
 
 # Credit Card Default Example
 
@@ -17,7 +19,7 @@ For sake of simplicity, the components of the architecture will be explain as "s
 5. Automated Pipelines: It is implemented as an Inference Pipeline (containing preprocess and the ml-model). All the steps is done by distincts MlflowProjects that shows all the machine learnig development lifecycle
 6. Model Registry: This is done through "MlFlow model registry", just a model registration (versioned)
 7. Trained Model / Model Serving: There is various options for implementing it, could be FlaskApi/FastApi/(Batch approach) but in this demo we support this feature with "Mlflow model serving"
-8. ML Prediction Service: By the serving, it is an active service listening in real time for post requests (see an example at "serve/" folder). It could reuse features from feature store and additional data/features coming from the request
+8. ML Prediction Service: By model serving stage, it is an active service listening in real time for post requests (see an example at "serve/" folder). It could reuse features from feature store and additional data/features coming from the request
 9. Performance Monitoring: It should be done by integrating monitoring tools used in the company at the time (grafana, splunk, so on), in this demo it is done by evidently-ai orchestrated by airflow thus generating drift metrics (see "drift/" folder and dashboard drift report at "drift/evidently_reports/credit_card_default_data_drift_by_airflow.html")
 10. Alert triggers: Should be done by integrating alerting tools the company use at the time (PagerDuty / Slack )
 11. Retraining: Should reuse the Automated Pipeline we've created after CI/CD, also triggered by a drift detection rule
@@ -79,6 +81,13 @@ b. Test the mlflow model
         mlflow models serve -m model_export & (background)
         
 ![alt][model_serving]
+
+#### Drift detection
+
+![alt][drift_dag]
+
+![alt][drift_dashboard]
+        
 
 #### Extra Notes to spin-up a mlflow docker container
 - create docker network: docker network create cesar_net
