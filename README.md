@@ -10,7 +10,7 @@
 ### Key points
 
 For sake of simplicity, the components of the architecture will be explain as "should be" followed by "current implementation" (limited scoped, just for the demo)
-1. Data Analysis: Should be extracted from the feature store, in this case just a simple csv dataset (credit card default) will be processed
+1. Data Analysis: Should be extracted from the feature store, in this case just a simple csv dataset (credit card default) will be processed [https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients#]
 2. Model tracking/experimentation: Should be a specific in-house instance of Mlflow, in this case we spin-up a Mlflow docker container. The use of model tracking is detailed as a serious of MLFlowProjects (a ds-component with their own dependencies)
 3. Source code / repository: In this demo is Github
 4. CI/CD Stage: It is done with Github Actions, you can see this in the "Actions" tab on Github
