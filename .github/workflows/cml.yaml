@@ -3,8 +3,6 @@ on: [push]
 jobs:
   run:
     runs-on: [ubuntu-latest]
-    #container: docker://dvcorg/cml-py3:latest
-    #container: docker://ghcr.io/iterative/cml:0-dvc2-base1
     container: docker.io/cesarch94/cml_conda
     steps:
       - uses: actions/checkout@v2
@@ -15,6 +13,7 @@ jobs:
         run: |
           pip3 install --upgrade protobuf==3.20.0
           pip3 install mlflow==1.26.0
+          pip3 install -r requirements.txt
           mlflow run .
           echo "## Model metrics" > report.md
           cat ./evaluate/metrics.txt >> report.md
