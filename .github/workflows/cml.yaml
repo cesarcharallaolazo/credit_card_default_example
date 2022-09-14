@@ -17,5 +17,4 @@ jobs:
           cat ./evaluate/metrics.txt >> report.md
           echo "## Confusion Matrix Test Dataset" >> report.md
           cml-publish ./evaluate/img/confusion_matrix.png --md >> report.md
-          #cml-publish residuals.png --md >> report.md
           cml-send-comment report.md
