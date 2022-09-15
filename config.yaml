@@ -1,6 +1,6 @@
 main:
-  mlflow_tracking_url: "http://localhost:7755/"
-  #mlflow_tracking_url: null
+  #mlflow_tracking_url: "http://localhost:7755/"
+  mlflow_tracking_url: null
   experiment_name: prod_all_credit_card_default
   execute_steps:
     - download
