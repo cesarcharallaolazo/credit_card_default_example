@@ -2,6 +2,7 @@
 [model_serving]:_md_img/serve.png
 [drift_dag]:_md_img/drift_dag.png
 [drift_dashboard]:_md_img/drift_dashboard.png
+[cicd_ml]:_md_img/cicd_ml.png
 
 # Credit Card Default Example
 
@@ -87,6 +88,12 @@ b. Test the mlflow model
 ![alt][drift_dag]
 
 ![alt][drift_dashboard]
+
+#### CI/CD: Continuous machine learning integration
+
+You can see the CI/CD pipeline for the credit card default model with Github Actions ("Actions" tab on Github), each commit triggers and executes the CI/CD pipeline (the last commit https://github.com/cesarcharallaolazo/credit_card_default_example/commit/ff393ce2784151e3ac78f12c215b64bf527697f9#comments)
+
+![alt][cicd_ml]
         
 
 #### Extra Notes to spin-up a mlflow docker container
