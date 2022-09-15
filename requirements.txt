@@ -47,7 +47,6 @@ prometheus-flask-exporter==0.20.3
 promise==2.3
 protobuf==3.20.1
 py==1.11.0
-pyarrow==2.0.0
 PyJWT==2.4.0
 pyparsing==3.0.9
 PyQt5==5.15.4
